@@ -29,11 +29,41 @@ OPTIONS:
     -V, --version                  Print version information
 ```
 
+## Sample
+
+```bash
+$ c2j <<EOF
+sample,value
+1,string
+2,
+3,123
+4,0123
+5,1E
+6,1E6
+7,100000000000000000000
+EOF
+```
+
+outputs:
+
+```
+{"sample":1,"value":"string"}
+{"sample":2,"value":null}
+{"sample":3,"value":123}
+{"sample":4,"value":"0123"}
+{"sample":5,"value":"1E"}
+{"sample":6,"value":"1E6"}
+{"sample":7,"value":"100000000000000000000"}
+```
+
 ## ToDo
 
 - [ ] implement sniff with csv-sniffer
 - [ ] add encoding arguments (e.g. CP-1252, ISO 8859-1/latin1, etc.)
 - [ ] add tests
+- [ ] option to set column type
+- [ ] do not convert 9007199254740993
+- [ ] infer column types using csv-sniffer
 
 ## Thanks to
 
