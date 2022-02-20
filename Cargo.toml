@@ -1,0 +1,24 @@
+[package]
+name = "csv2jsonl"
+version = "0.3.0"
+edition = "2021"
+authors = ["Benjamin W. Broersma <bw@broersma.com>"]
+description = "Converts CSV to JSON Lines"
+repository = "https://github.com/bwbroersma/csv2jsonl/"
+homepage = "https://github.com/bwbroersma/csv2jsonl/"
+license = "EUPL-1.2"
+keywords = ["CSV", "JSON", "JSONL"]
+categories = ["command-line-utilities", "text-processing"]
+
+[[bin]]
+name = "c2j"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "^3.1", features = ["derive"] }
+csv = "^1.0"
+encoding_rs = "^0.8"
+encoding_rs_io = "^0.1"
+indexmap = {version= "^1.7", features= ["serde-1"]}
+serde = "^1.0"
+serde_json = {version= "^1.0", features= ["preserve_order"]}
