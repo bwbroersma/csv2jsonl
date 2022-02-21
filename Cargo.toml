@@ -6,7 +6,7 @@ authors = ["Benjamin W. Broersma <bw@broersma.com>"]
 description = "Converts CSV to JSON Lines"
 repository = "https://github.com/bwbroersma/csv2jsonl/"
 homepage = "https://github.com/bwbroersma/csv2jsonl/"
-license = "EUPL-1.2"
+license = "MIT OR Apache-2.0"
 keywords = ["CSV", "JSON", "JSONL"]
 categories = ["command-line-utilities", "text-processing"]
 

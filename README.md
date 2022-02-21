@@ -9,6 +9,14 @@ then an appropriate encoding is automatically detected and transcoding is perfor
 all other cases, the source of the underlying reader is passed through unchanged as if it
 were UTF-8.
 
+## Install
+
+The binary name for csv2jsonl is `c2j`.
+Currently csv2jsonl can only be installed via cargo, first [install rust](https://www.rust-lang.org/tools/install), then:
+```bash
+$ cargo install csv2jsonl
+```
+
 ## Usage
 
 ```bash
@@ -46,7 +54,7 @@ EOF
 
 outputs:
 
-```
+```json
 {"sample":1,"value":"string"}
 {"sample":2,"value":null}
 {"sample":3,"value":123}
@@ -61,10 +69,27 @@ outputs:
 - [ ] implement sniff with csv-sniffer
 - [ ] add encoding arguments (e.g. CP-1252, ISO 8859-1/latin1, etc.)
 - [ ] add tests
+- [ ] add workflow / ci build (release)
 - [ ] option to set column type
 - [ ] do not convert 9007199254740993
 - [ ] infer column types using csv-sniffer
 
-## Thanks to
+## License
+
+This project is licensed under either of
+
+* [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+  ([LICENSE-APACHE](https://github.com/bwbroersma/csv2jsonl/blob/main/LICENSE-APACHE))
+
+* [MIT License](https://opensource.org/licenses/MIT)
+  ([LICENSE-MIT](https://github.com/bwbroersma/csv2jsonl/blob/main/LICENSE-MIT))
+
+at your option.
+
+## Contribution
+
+Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in the work by you, as defined in the Apache-2.0 license, shall be dual licensed as above, without any additional terms or conditions.
+
+## Thanks to/Inspiration from
 
 I started looking for a fast rust version of [csvjson](https://csvkit.readthedocs.io/en/latest/scripts/csvjson.html) of the csvkit. I initially found [csv_to_json](https://github.com/divyekapoor/csv_to_json/), streaming but not properly reading csv. And [csv2json](https://github.com/apolitical/csv2json/) which was using [csv](https://github.com/BurntSushi/rust-csv), but no stream. After altering the package a lot, I thought it would be best to create a new one instead of a fork.
